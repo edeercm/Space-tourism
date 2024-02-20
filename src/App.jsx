@@ -5,8 +5,6 @@ import Home from './pages/Home/Home'
 import Destinations from './pages/Destinations/Destinations'
 import Crew from './pages/Crew/Crew'
 import Technology from './pages/Technology/Technology'
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {

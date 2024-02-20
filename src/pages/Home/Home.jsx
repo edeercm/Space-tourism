@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import homedesktopbg from '../../assets/images/home/home-desktop.jpg'
 import homedetabletbg from '../../assets/images/home/home-tablet.jpg'
 import homemobilebg from '../../assets/images/home/home-mobile.jpg'
@@ -111,7 +111,7 @@ const Home = () => {
             <Description>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</Description>
           </div>
           <div className="col-6 d-flex justify-content-end align-items-end">
-            <Button>
+            <Button >
               <Link to={'destinations'} >
                 <BtnLabel>Explore</BtnLabel>
               </Link>

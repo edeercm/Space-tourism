@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import logo from '../assets/images/header/logo.svg'
 
 const HeaderStyle = styled.header`
@@ -52,6 +52,26 @@ const NavBg = styled.div`
   }
 `
 
+const NavItem = styled.p`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin: 0;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1.75rem; /* Ajusta la distancia del borde inferior */
+    width: 100%;
+    height: 0.225rem;
+    background-color: ${(props) => (props.isSelected ? 'white' : 'transparent')};
+    transition: height 0.35s, background-color 0.35s; /* Agrega una transición suave */
+  }
+`;
+
 const NavNumber = styled.span`
   position: relative;
   font-size: 1.125rem;
@@ -80,46 +100,76 @@ const NavLabel = styled.span`
 `
 
 const Header = () => {
-  return <>
+
+  const location = useLocation();
+  const [selectedItem, setSelectedItem] = useState(0);
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/':
+        setSelectedItem(0);
+        break;
+      case '/destinations':
+        setSelectedItem(1);
+        break;
+      case '/crew':
+        setSelectedItem(2);
+        break;
+      case '/technology':
+        setSelectedItem(3);
+        break;
+      default:
+        setSelectedItem(0);
+        break;
+    }
+  }, [location.pathname]);
+
+  const handleItemClick = (index) => {
+    setSelectedItem(index);
+  };
+
+  return (
     <HeaderStyle>
       <div className="container-fluid">
         <div className="row d-flex align-items-center">
           <div className="col-4">
-            <img src={logo} alt="Logo" className='w-auto ms-5' />
+            <Link to={'/'} >
+              <img src={logo} alt="Logo" className='w-auto ms-5' />
+            </Link>
           </div>
           <div className="col-8 d-flex justify-content-end px-0">
             <InnerWrapper>
               <NavBg />
               <li>
                 <Link to={'/'}>
-                  <div className='d-flex flex-row gap-2'>
+                  <NavItem isSelected={selectedItem === 0} onClick={() => handleItemClick(0)}>
                     <NavNumber>00</NavNumber>
                     <NavLabel>Home</NavLabel>
-                  </div>
+                  </NavItem>
                 </Link>
               </li>
               <li>
                 <Link to={'destinations'}>
-                  <div className='d-flex flex-row gap-2'>
+                  <NavItem isSelected={selectedItem === 1} onClick={() => handleItemClick(1)}>
                     <NavNumber>01</NavNumber>
                     <NavLabel>Destination</NavLabel>
-                  </div>
+                  </NavItem>
                 </Link>
               </li>
               <li>
                 <Link to={'crew'}>
-                  <div className='d-flex flex-row gap-2'>
+                  <NavItem isSelected={selectedItem === 2} onClick={() => handleItemClick(2)}>
                     <NavNumber>02</NavNumber>
                     <NavLabel>Crew</NavLabel>
-                  </div>
+                  </NavItem>
                 </Link>
               </li>
               <li>
                 <Link to={'technology'}>
-                  <div className='d-flex flex-row gap-2'>
+                  <NavItem isSelected={selectedItem === 3} onClick={() => handleItemClick(3)}>
                     <NavNumber>03</NavNumber>
                     <NavLabel>Technology</NavLabel>
-                  </div>
+                  </NavItem>
                 </Link>
               </li>
             </InnerWrapper>
@@ -127,7 +177,7 @@ const Header = () => {
         </div>
       </div>
     </HeaderStyle>
-  </>
-}
+  );
+};
 
-export default Header
+export default Header;
