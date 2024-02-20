@@ -7,7 +7,6 @@ const Label = styled.span`
   color: var(--second-color);
   cursor: pointer;
 
-
   @media (min-width: 575.98px) and (max-width: 991.98px) {
   }
 

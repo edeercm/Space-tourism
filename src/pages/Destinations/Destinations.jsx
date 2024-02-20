@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import destData from '../../components/DestComps/DestData';
 import homedesktopbg from '../../assets/images/destination/destination-desktop.jpg'
 import homedetabletbg from '../../assets/images/destination/destination-tablet.jpg'
 import homemobilebg from '../../assets/images/destination/destination-mobile.jpg'
-import destData from '../../components/DestComps/DestData';
 import DestNav from '../../components/DestComps/DestNav'
 
 const Section = styled.section`

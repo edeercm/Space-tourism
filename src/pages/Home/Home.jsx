@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import homedesktopbg from '../../assets/images/home/home-desktop.jpg'
 import homedetabletbg from '../../assets/images/home/home-tablet.jpg'
 import homemobilebg from '../../assets/images/home/home-mobile.jpg'
@@ -12,7 +13,8 @@ const Section = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  align-items: center;
+  align-items: end;
+  padding-bottom: 7.5rem;
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
     background-image: url(${homedetabletbg});
@@ -24,10 +26,7 @@ const Section = styled.section`
 `
 
 const Container = styled.div`
-  width: 100%;
-  height: 70svh;
-  display: flex;
-  align-items: end;
+  width: 80%;
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
   }
@@ -63,7 +62,7 @@ const Place = styled.h1`
 
 const Description = styled.span`
   display: inline-flex;
-  width: 75%;
+  /* width: 75%; */
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--second-color);
@@ -76,8 +75,8 @@ const Description = styled.span`
 `
 
 const Button = styled.button`
-  width: 16.25rem;
-  height: 16.25rem;
+  width: 17.5rem;
+  height: 17.5rem;
   border-radius: 50%;
   background-color: var(--third-color);
 
@@ -113,12 +112,13 @@ const Home = () => {
           </div>
           <div className="col-6 d-flex justify-content-end align-items-end">
             <Button>
-              <BtnLabel>Explore</BtnLabel>
+              <Link to={'destinations'} >
+                <BtnLabel>Explore</BtnLabel>
+              </Link>
             </Button>
           </div>
         </div>
       </Container>
-
     </Section>
   </>
 }
