@@ -38,10 +38,30 @@ const DestNav = ({ onDestinationSelect }) => {
 
   return <>
     <div className='d-flex flex-row gap-4'>
-      <Label isSelected={selectedItem === 0} onClick={() => handleSelect('Moon', 0)}>Moon</Label>
-      <Label isSelected={selectedItem === 1} onClick={() => handleSelect('Mars', 1)}>Mars</Label>
-      <Label isSelected={selectedItem === 2} onClick={() => handleSelect('Europa', 2)}>Europa</Label>
-      <Label isSelected={selectedItem === 3} onClick={() => handleSelect('Titan', 3)}>Titan</Label>
+      <Label
+        isSelected={selectedItem === 0}
+        onClick={() => handleSelect('Moon', 0)}
+      >
+        Moon
+      </Label>
+      <Label
+        isSelected={selectedItem === 1}
+        onClick={() => handleSelect('Mars', 1)}
+      >
+        Mars
+      </Label>
+      <Label
+        isSelected={selectedItem === 2}
+        onClick={() => handleSelect('Europa', 2)}
+      >
+        Europa
+      </Label>
+      <Label
+        isSelected={selectedItem === 3}
+        onClick={() => handleSelect('Titan', 3)}
+      >
+        Titan
+      </Label>
     </div>
   </>
 

@@ -1,22 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import logo from '../assets/images/header/logo.svg'
-
-const HeaderStyle = styled.header`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 20vh;
-  background-color: transparent;
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
 
 const InnerWrapper = styled.div`
   position: relative;
@@ -99,7 +83,7 @@ const NavLabel = styled.span`
   }
 `
 
-const Header = () => {
+const NavBar = () => {
 
   const location = useLocation();
   const [selectedItem, setSelectedItem] = useState(0);
@@ -128,56 +112,55 @@ const Header = () => {
     setSelectedItem(index);
   };
 
-  return (
-    <HeaderStyle>
-      <div className="container-fluid">
-        <div className="row d-flex align-items-center">
-          <div className="col-4">
-            <Link to={'/'} >
-              <img src={logo} alt="Logo" className='w-auto ms-5' />
-            </Link>
-          </div>
-          <div className="col-8 d-flex justify-content-end px-0">
-            <InnerWrapper>
-              <NavBg />
-              <li>
-                <Link to={'/'}>
-                  <NavItem isSelected={selectedItem === 0} onClick={() => handleItemClick(0)}>
-                    <NavNumber>00</NavNumber>
-                    <NavLabel>Home</NavLabel>
-                  </NavItem>
-                </Link>
-              </li>
-              <li>
-                <Link to={'destinations'}>
-                  <NavItem isSelected={selectedItem === 1} onClick={() => handleItemClick(1)}>
-                    <NavNumber>01</NavNumber>
-                    <NavLabel>Destination</NavLabel>
-                  </NavItem>
-                </Link>
-              </li>
-              <li>
-                <Link to={'crew'}>
-                  <NavItem isSelected={selectedItem === 2} onClick={() => handleItemClick(2)}>
-                    <NavNumber>02</NavNumber>
-                    <NavLabel>Crew</NavLabel>
-                  </NavItem>
-                </Link>
-              </li>
-              <li>
-                <Link to={'technology'}>
-                  <NavItem isSelected={selectedItem === 3} onClick={() => handleItemClick(3)}>
-                    <NavNumber>03</NavNumber>
-                    <NavLabel>Technology</NavLabel>
-                  </NavItem>
-                </Link>
-              </li>
-            </InnerWrapper>
-          </div>
-        </div>
-      </div>
-    </HeaderStyle>
-  );
-};
+  return <>
+    <InnerWrapper>
+      <NavBg />
+      <li>
+        <Link to={'/'}>
+          <NavItem 
+            isSelected={selectedItem === 0} 
+            onClick={() => handleItemClick(0)}
+          >
+            <NavNumber>00</NavNumber>
+            <NavLabel>Home</NavLabel>
+          </NavItem>
+        </Link>
+      </li>
+      <li>
+        <Link to={'destinations'}>
+          <NavItem 
+            isSelected={selectedItem === 1} 
+            onClick={() => handleItemClick(1)}
+          >
+            <NavNumber>01</NavNumber>
+            <NavLabel>Destination</NavLabel>
+          </NavItem>
+        </Link>
+      </li>
+      <li>
+        <Link to={'crew'}>
+          <NavItem 
+            isSelected={selectedItem === 2} 
+            onClick={() => handleItemClick(2)}
+          >
+            <NavNumber>02</NavNumber>
+            <NavLabel>Crew</NavLabel>
+          </NavItem>
+        </Link>
+      </li>
+      <li>
+        <Link to={'technology'}>
+          <NavItem 
+            isSelected={selectedItem === 3} 
+            onClick={() => handleItemClick(3)}
+          >
+            <NavNumber>03</NavNumber>
+            <NavLabel>Technology</NavLabel>
+          </NavItem>
+        </Link>
+      </li>
+    </InnerWrapper>
+  </>
+}
 
-export default Header;
+export default NavBar

@@ -16,7 +16,7 @@ const Button = styled.button`
   }
 `
 
-const ButtonLabel = styled.h1`
+const BtnLabel = styled.h1`
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
@@ -40,14 +40,29 @@ const TechNav = ({ onTechnologySelect }) => {
 
   return <>
     <div className='d-flex flex-column gap-4'>
-      <Button isSelected={selectedTechnology === 'Launch vehicle'} onClick={() => handleSelect('Launch vehicle')}>
-        <ButtonLabel isSelected={selectedTechnology === 'Launch vehicle'}>1</ButtonLabel>
+      <Button
+        isSelected={selectedTechnology === 'Launch vehicle'}
+        onClick={() => handleSelect('Launch vehicle')}
+      >
+        <BtnLabel isSelected={selectedTechnology === 'Launch vehicle'}>
+          1
+        </BtnLabel>
       </Button>
-      <Button isSelected={selectedTechnology === 'Spaceport'} onClick={() => handleSelect('Spaceport')}>
-        <ButtonLabel isSelected={selectedTechnology === 'Spaceport'}>2</ButtonLabel>
+      <Button
+        isSelected={selectedTechnology === 'Spaceport'}
+        onClick={() => handleSelect('Spaceport')}
+      >
+        <BtnLabel isSelected={selectedTechnology === 'Spaceport'}>
+          2
+        </BtnLabel>
       </Button>
-      <Button isSelected={selectedTechnology === 'Space capsule'} onClick={() => handleSelect('Space capsule')}>
-        <ButtonLabel isSelected={selectedTechnology === 'Space capsule'}>3</ButtonLabel>
+      <Button
+        isSelected={selectedTechnology === 'Space capsule'}
+        onClick={() => handleSelect('Space capsule')}
+      >
+        <BtnLabel isSelected={selectedTechnology === 'Space capsule'}>
+          3
+        </BtnLabel>
       </Button>
     </div>
   </>

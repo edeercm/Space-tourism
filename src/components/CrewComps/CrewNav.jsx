@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 
 const Button = styled.button`
-  width: ${(props) => (props.isSelected ? '1.125rem' : '0.938rem')};
-  height: ${(props) => (props.isSelected ? '1.125rem' : '0.938rem')};
+  width: ${(props) => (props.isSelected ? '1.125rem' : '0.935rem')};
+  height: ${(props) => (props.isSelected ? '1.125rem' : '0.935rem')};
   opacity: ${(props) => (props.isSelected ? '1' : '0.5')};
   border-radius: 50%;
   background-color: var(--third-color);
@@ -28,10 +28,26 @@ const CrewNav = ({ onCrewSelect }) => {
 
   return <>
     <div className='d-flex flex-row align-items-center gap-2'>
-      <Button isSelected={selectedCrew === 'Douglas Hurley'} onClick={() => handleSelect('Douglas Hurley')}></Button>
-      <Button isSelected={selectedCrew === 'Mark Shuttleworth'} onClick={() => handleSelect('Mark Shuttleworth')}></Button>
-      <Button isSelected={selectedCrew === 'Victor Glover'} onClick={() => handleSelect('Victor Glover')}></Button>
-      <Button isSelected={selectedCrew === 'Anousheh Ansari'} onClick={() => handleSelect('Anousheh Ansari')}></Button>
+      <Button
+        isSelected={selectedCrew === 'Douglas Hurley'}
+        onClick={() => handleSelect('Douglas Hurley')}
+      >
+      </Button>
+      <Button
+        isSelected={selectedCrew === 'Mark Shuttleworth'}
+        onClick={() => handleSelect('Mark Shuttleworth')}
+      >
+      </Button>
+      <Button
+        isSelected={selectedCrew === 'Victor Glover'}
+        onClick={() => handleSelect('Victor Glover')}
+      >
+      </Button>
+      <Button
+        isSelected={selectedCrew === 'Anousheh Ansari'}
+        onClick={() => handleSelect('Anousheh Ansari')}
+      >
+      </Button>
     </div>
   </>
 }
