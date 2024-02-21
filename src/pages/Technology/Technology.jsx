@@ -100,6 +100,7 @@ const TechDesc = styled.p`
   color: var(--second-color);
 
   @media (max-width: 575.97px) {
+    width: 75%;
     font-size: 1.075rem;
   }
 `
@@ -138,7 +139,7 @@ const Technology = () => {
               <div className='d-flex flex-column flex-xl-row text-center text-xl-start align-items-center align-items-xl-start gap-4 gap-xl-5'>
                 <TechNav onTechnologySelect={handleTechnologySelect} />
                 {technology && (
-                  <div className='d-flex flex-column gap-2 gap-xl-3'>
+                  <div className='d-flex flex-column align-items-center align-items-xl-start gap-2 gap-xl-3'>
                     <div>
                       <TechRole>The terminology...</TechRole>
                       <TechName>{technology.name}</TechName>
