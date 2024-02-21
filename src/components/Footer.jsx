@@ -7,14 +7,7 @@ const FooterStyle = styled.header`
   width: 100%;
   height: 5vh;
   background-color: var(--third-color);
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
 `
-
 
 const Footer = () => {
   return <>
