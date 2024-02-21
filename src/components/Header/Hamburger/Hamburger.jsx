@@ -24,7 +24,14 @@ const Container = styled.div`
   }
 `;
 
-const Hamburguer = () => {
+const Hamburger = () => {
+
+  const closeOffcanvas = () => {
+    var offcanvasElement = document.getElementById('offcanvasNavbar');
+    var offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+    offcanvas.hide();
+  };
+
   return <>
     <Container>
       <div
@@ -38,14 +45,15 @@ const Hamburguer = () => {
       </div>
       <div
         className="offcanvas offcanvas-end"
-        tabIndex="-1" id="offcanvasNavbar"
+        tabIndex="-1" 
+        id="offcanvasNavbar"
         aria-labelledby="offcanvasRightLabel"
       >
         <div className="offcanvas-header d-flex justify-content-end">
           <img src={close} alt="close" className="w-auto mt-2" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
         <div className="offcanvas-body d-flex justify-content-center align-items-start">
-          <Labels />
+          <Labels closeOffcanvas={closeOffcanvas}/>
         </div>
         <Icons />
       </div>
@@ -53,4 +61,4 @@ const Hamburguer = () => {
   </>
 }
 
-export default Hamburguer
+export default Hamburger

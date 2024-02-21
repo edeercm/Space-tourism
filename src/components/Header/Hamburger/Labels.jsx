@@ -22,10 +22,10 @@ const Label = styled.span`
   color: var(--third-color);
 `
 
-const Labels = () => {
+const Labels = ({ closeOffcanvas }) => {
   return <>
     <div className='d-flex flex-column gap-4'>
-      <li>
+      <li onClick={closeOffcanvas}>
         <Link to={'/'}>
           <LabelCont>
             <Number>00</Number>
@@ -33,15 +33,15 @@ const Labels = () => {
           </LabelCont>
         </Link>
       </li>
-      <li>
+      <li onClick={closeOffcanvas}>
         <Link to={'destinations'}>
-          <LabelCont >
+          <LabelCont>
             <Number>01</Number>
             <Label>Destination</Label>
           </LabelCont>
         </Link>
       </li>
-      <li>
+      <li onClick={closeOffcanvas}>
         <Link to={'crew'}>
           <LabelCont>
             <Number>02</Number>
@@ -49,7 +49,7 @@ const Labels = () => {
           </LabelCont>
         </Link>
       </li>
-      <li>
+      <li onClick={closeOffcanvas}>
         <Link to={'technology'}>
           <LabelCont>
             <Number>03</Number>
