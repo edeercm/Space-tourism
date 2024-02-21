@@ -17,7 +17,6 @@ const Section = styled.section`
   display: flex;
   align-items: center;
   padding-top: 2rem;
-  /* padding-bottom: 5.5rem; */
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
     padding-top: 6.25rem;
