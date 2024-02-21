@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const LabelContent = styled.p`
+const LabelCont = styled.p`
   display: flex;
   flex-direction: row;
   gap: 0.75rem;
@@ -10,7 +10,7 @@ const LabelContent = styled.p`
   cursor: pointer;
 `;
 
-const LabelNumber = styled.span`
+const Number = styled.span`
   font-size: 1.75rem;
   font-weight: bold;
   color: var(--third-color);
@@ -27,34 +27,34 @@ const Labels = () => {
     <div className='d-flex flex-column gap-4'>
       <li>
         <Link to={'/'}>
-          <LabelContent>
-            <LabelNumber>00</LabelNumber>
+          <LabelCont>
+            <Number>00</Number>
             <Label>Home</Label>
-          </LabelContent>
+          </LabelCont>
         </Link>
       </li>
       <li>
         <Link to={'destinations'}>
-          <LabelContent >
-            <LabelNumber>01</LabelNumber>
+          <LabelCont >
+            <Number>01</Number>
             <Label>Destination</Label>
-          </LabelContent>
+          </LabelCont>
         </Link>
       </li>
       <li>
         <Link to={'crew'}>
-          <LabelContent>
-            <LabelNumber>02</LabelNumber>
+          <LabelCont>
+            <Number>02</Number>
             <Label>Crew</Label>
-          </LabelContent>
+          </LabelCont>
         </Link>
       </li>
       <li>
         <Link to={'technology'}>
-          <LabelContent>
-            <LabelNumber>03</LabelNumber>
+          <LabelCont>
+            <Number>03</Number>
             <Label>Technology</Label>
-          </LabelContent>
+          </LabelCont>
         </Link>
       </li>
     </div>
