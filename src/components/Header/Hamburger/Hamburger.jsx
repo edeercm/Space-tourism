@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import Icons from '../Hamburger/Icons'
@@ -26,37 +26,23 @@ const Container = styled.div`
 `;
 
 const Hamburguer = () => {
-
-  const offcanvasRef = useRef(null);
-  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
-
-  const toggleOffcanvas = () => {
-    setIsOffcanvasOpen(!isOffcanvasOpen);
-  };
-
-
   return <>
     <Container>
-      <div 
-        className="navbar-toggle"
+      <div className="navbar-toggle"
         type="button"
-        // data-bs-toggle="offcanvas"
-        // data-bs-target="#offcanvasNavbar"
-        // aria-controls="offcanvasNavbar"
-        onClick={toggleOffcanvas}
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
       >
         <img src={hamburger} alt="hamburger" />
       </div>
       <div
-        // className="offcanvas offcanvas-end"
-        className={`offcanvas offcanvas-end ${isOffcanvasOpen ? 'show' : ''}`}
-        tabIndex="-1" 
-        id="offcanvasNavbar"
+        className="offcanvas offcanvas-end"
+        tabIndex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasRightLabel"
-        ref={offcanvasRef}
       >
         <div className="offcanvas-header d-flex justify-content-end">
-          <img src={close} alt="close" className="w-auto mt-2"  onClick={toggleOffcanvas} aria-label="Close" />
+          <img src={close} alt="close" className="w-auto mt-2" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
         <div className="offcanvas-body d-flex flex-column justify-content-start align-items-center mt-5 gap-5">
           <Menu />

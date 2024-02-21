@@ -26,16 +26,12 @@ const NavLabel = styled.span`
   color: var(--third-color);
 `
 
-const Menu = ({ onCloseOffcanvas  }) => {
-
-  const handleClick = () => {
-    onCloseOffcanvas();
-  };
+const Menu = () => {
 
   return <>
     <div className='d-flex flex-column gap-4'>
       <li>
-        <Link to={'/'} onClick={handleClick}>
+        <Link to={'/'}>
           <NavItem>
             <NavNumber>00</NavNumber>
             <NavLabel>Home</NavLabel>
@@ -43,7 +39,7 @@ const Menu = ({ onCloseOffcanvas  }) => {
         </Link>
       </li>
       <li>
-        <Link to={'destinations'} onClick={handleClick}>
+        <Link to={'destinations'}>
           <NavItem >
             <NavNumber>01</NavNumber>
             <NavLabel>Destination</NavLabel>
@@ -51,7 +47,7 @@ const Menu = ({ onCloseOffcanvas  }) => {
         </Link>
       </li>
       <li>
-        <Link to={'crew'} onClick={handleClick}>
+        <Link to={'crew'}>
           <NavItem>
             <NavNumber>02</NavNumber>
             <NavLabel>Crew</NavLabel>
@@ -59,7 +55,7 @@ const Menu = ({ onCloseOffcanvas  }) => {
         </Link>
       </li>
       <li>
-        <Link to={'technology'} onClick={handleClick}>
+        <Link to={'technology'}>
           <NavItem>
             <NavNumber>03</NavNumber>
             <NavLabel>Technology</NavLabel>
