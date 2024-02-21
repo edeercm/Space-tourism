@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Menu from './Menu';
+import Labels from './Labels';
 import Icons from '../Hamburger/Icons'
 import close from '../../../assets/images/header/icon-close.svg'
 import hamburger from '../../../assets/images/header/icon-hamburger.svg'
@@ -27,7 +27,7 @@ const Container = styled.div`
 const Hamburguer = () => {
   return <>
     <Container>
-      <div 
+      <div
         className="navbar-toggle"
         type="button"
         data-bs-toggle="offcanvas"
@@ -44,10 +44,10 @@ const Hamburguer = () => {
         <div className="offcanvas-header d-flex justify-content-end">
           <img src={close} alt="close" className="w-auto mt-2" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
-        <div className="offcanvas-body d-flex flex-column justify-content-start align-items-center mt-5 gap-5">
-          <Menu />
-          <Icons />
+        <div className="offcanvas-body d-flex justify-content-center align-items-start">
+          <Labels />
         </div>
+        <Icons />
       </div>
     </Container>
   </>

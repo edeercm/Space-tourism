@@ -7,6 +7,7 @@ const Icons = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  margin-bottom: 2.5rem;
 
   svg {
     color: var(--third-color);
