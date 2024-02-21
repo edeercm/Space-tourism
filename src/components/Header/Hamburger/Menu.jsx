@@ -26,13 +26,12 @@ const NavLabel = styled.span`
   color: var(--third-color);
 `
 
-const Menu = ({ toggle }) => {
-
+const Menu = () => {
   return <>
     <div className='d-flex flex-column gap-4'>
       <li>
         <Link to={'/'}>
-          <NavItem onClick={() => toggle && toggle.click()}>
+          <NavItem>
             <NavNumber>00</NavNumber>
             <NavLabel>Home</NavLabel>
           </NavItem>
@@ -40,7 +39,7 @@ const Menu = ({ toggle }) => {
       </li>
       <li>
         <Link to={'destinations'}>
-          <NavItem onClick={() => toggle && toggle.click()}>
+          <NavItem >
             <NavNumber>01</NavNumber>
             <NavLabel>Destination</NavLabel>
           </NavItem>
@@ -48,7 +47,7 @@ const Menu = ({ toggle }) => {
       </li>
       <li>
         <Link to={'crew'}>
-          <NavItem onClick={() => toggle && toggle.click()}>
+          <NavItem>
             <NavNumber>02</NavNumber>
             <NavLabel>Crew</NavLabel>
           </NavItem>
@@ -56,7 +55,7 @@ const Menu = ({ toggle }) => {
       </li>
       <li>
         <Link to={'technology'}>
-          <NavItem onClick={() => toggle && toggle.click()}>
+          <NavItem>
             <NavNumber>03</NavNumber>
             <NavLabel>Technology</NavLabel>
           </NavItem>

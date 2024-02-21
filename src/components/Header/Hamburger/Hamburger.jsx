@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 import Icons from '../Hamburger/Icons'
@@ -25,20 +25,9 @@ const Container = styled.div`
 `;
 
 const Hamburguer = () => {
-
-  const navToggleButtonRef = useRef(); // Referencia al botón de hamburguesa
-  const menuPanelRef = useRef();       // Referencia al panel desplegable
-
-  function handleClickOutside(event) {
-    if (!menuPanelRef?.current?.contains(event.target)) {
-      // Clicked outside the container - hide it!
-      document.querySelector('.offcanvas').classList.remove('show');
-    }
-  };
-
   return <>
-    <Container onClickCapture={handleClickOutside}>
-      <div ref={navToggleButtonRef}
+    <Container>
+      <div 
         className="navbar-toggle"
         type="button"
         data-bs-toggle="offcanvas"
@@ -48,7 +37,6 @@ const Hamburguer = () => {
         <img src={hamburger} alt="hamburger" />
       </div>
       <div
-        ref={menuPanelRef}
         className="offcanvas offcanvas-end"
         tabIndex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasRightLabel"
@@ -57,7 +45,7 @@ const Hamburguer = () => {
           <img src={close} alt="close" className="w-auto mt-2" data-bs-dismiss="offcanvas" aria-label="Close" />
         </div>
         <div className="offcanvas-body d-flex flex-column justify-content-start align-items-center mt-5 gap-5">
-          <Menu toggle={navToggleButtonRef.current}/>
+          <Menu />
           <Icons />
         </div>
       </div>
