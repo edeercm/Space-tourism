@@ -6,21 +6,25 @@ import homedetabletbg from '../../assets/images/home/home-tablet.jpg'
 import homemobilebg from '../../assets/images/home/home-mobile.jpg'
 
 const Section = styled.section`
+  display: flex;
+  align-items: end;
+  padding-bottom: 7.5rem;
   width: 100%;
   height: 100svh;
   background-image: url(${homedesktopbg});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  align-items: end;
-  padding-bottom: 7.5rem;
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    align-items: center;
+    padding-top: 15rem;
     background-image: url(${homedetabletbg});
   }
 
   @media (max-width: 575.97px) {
+    align-items: center;
+    padding-top: 10.5rem;
     background-image: url(${homemobilebg});
   }
 `
@@ -32,6 +36,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
   }
 `
 
@@ -45,6 +50,7 @@ const Label = styled.h6`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
 
@@ -57,17 +63,18 @@ const Place = styled.h1`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 5rem;
   }
 `
 
 const Description = styled.span`
-  display: inline-flex;
-  /* width: 75%; */
+  display: flex;
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--second-color);
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    width: 70%;
   }
 
   @media (max-width: 575.97px) {
@@ -84,6 +91,8 @@ const Button = styled.button`
   }
 
   @media (max-width: 575.97px) {
+    width: 15rem;
+    height: 15rem;
   }
 `
 
@@ -104,14 +113,16 @@ const Home = () => {
   return <>
     <Section>
       <Container className="container">
-        <div className="row">
-          <div className="col-6">
-            <Label>So, you want to travel to</Label>
-            <Place>Space</Place>
-            <Description>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</Description>
+        <div className="row gap-5 gap-xl-0">
+          <div className="col-md-12 col-xl-6">
+            <div className='d-flex flex-column text-center text-xl-start align-items-md-center align-items-xl-start'>
+              <Label>So, you want to travel to</Label>
+              <Place>Space</Place>
+              <Description>Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</Description>
+            </div>
           </div>
-          <div className="col-6 d-flex justify-content-end align-items-end">
-            <Button >
+          <div className="col-md-12 col-xl-6 d-flex justify-content-center justify-content-xl-end align-items-end">
+            <Button>
               <Link to={'destinations'} >
                 <BtnLabel>Explore</BtnLabel>
               </Link>

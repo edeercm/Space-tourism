@@ -4,6 +4,7 @@ import crewData from '../../components/CrewComps/CrewData'
 import homedesktopbg from '../../assets/images/crew/crew-desktop.jpg'
 import homedetabletbg from '../../assets/images/crew/crew-tablet.jpg'
 import homemobilebg from '../../assets/images/crew/crew-mobile.jpg'
+import { Number, Label } from '../../components/GloblalStyles';
 import CrewNav from '../../components/CrewComps/CrewNav'
 
 const Section = styled.section`
@@ -35,53 +36,17 @@ const Container = styled.div`
   }
 `
 
-const ContentOne = styled.div`
+const LabelCont = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   padding-bottom: 12.5rem;
   
   @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
-
-const Number = styled.span`
-  font-size: 1.75rem;
-  font-weight: bold;
-  opacity: 0.5;
-  letter-spacing: 0.295rem;
-  color: var(--third-color);
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
-
-const Label = styled.span`
-  text-transform: uppercase;
-  font-size: 1.75rem;
-  letter-spacing: 0.295rem;
-  color: var(--third-color);
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
-
-const CrewContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
+    position: absolute;
+    top: 17.5%;
+    left: 5%;
+    padding-bottom: 0;
   }
 
   @media (max-width: 575.97px) {
@@ -95,6 +60,7 @@ const CrewRole = styled.h4`
   color: var(--third-color);
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    font-size: 1.5rem;
   }
 
   @media (max-width: 575.97px) {
@@ -107,6 +73,7 @@ const CrewName = styled.h1`
  color: var(--third-color);
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    font-size: 2.5rem;
   }
 
   @media (max-width: 575.97px) {
@@ -115,10 +82,11 @@ const CrewName = styled.h1`
 
 const CrewDesc = styled.p`
   width: 70%;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--second-color);
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    width: 80%;
   }
 
   @media (max-width: 575.97px) {
@@ -130,6 +98,7 @@ const Image = styled.img`
   height: 75vh;
   
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    height: 45svh;
   }
 
   @media (max-width: 575.97px) {
@@ -148,15 +117,15 @@ const Crew = () => {
   return <>
     <Section>
       <Container className="container">
-        <div className="row d-flex align-items-end">
-          <div className="col-6">
-            <ContentOne>
+        <div className="row d-flex align-items-end gap-md-5 gap-xl-0">
+          <div className="col-md-12 col-xl-6 d-flex flex-column text-md-center text-xl-start align-items-md-center align-items-xl-start">
+            <LabelCont>
               <Number>02</Number>
               <Label>Meet your crew</Label>
-            </ContentOne>
-            <div className='d-flex flex-column gap-5 mb-4 pb-5'>
+            </LabelCont>
+            <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-md-3 gap-xl-5 mb-xl-4 pb-xl-5'>
               {crew && (
-                <div className='d-flex flex-column gap-3'>
+                <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-3'>
                   <div>
                     <CrewRole>{crew.role}</CrewRole>
                     <CrewName>{crew.name}</CrewName>
@@ -167,7 +136,7 @@ const Crew = () => {
               <CrewNav onCrewSelect={handleCrewSelect} />
             </div>
           </div>
-          <div className="col-6 d-flex justify-content-end">
+          <div className="col-md-12 col-xl-6 d-flex justify-content-md-center justify-content-xl-end">
             <Image src={crew.image} alt={crew.name} />
           </div>
         </div>

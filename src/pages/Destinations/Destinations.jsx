@@ -4,6 +4,7 @@ import destData from '../../components/DestComps/DestData';
 import homedesktopbg from '../../assets/images/destination/destination-desktop.jpg'
 import homedetabletbg from '../../assets/images/destination/destination-tablet.jpg'
 import homemobilebg from '../../assets/images/destination/destination-mobile.jpg'
+import { Number, Label } from '../../components/GloblalStyles';
 import DestNav from '../../components/DestComps/DestNav'
 
 const Section = styled.section`
@@ -19,6 +20,7 @@ const Section = styled.section`
   /* padding-bottom: 5.5rem; */
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    padding-top: 6.25rem;
     background-image: url(${homedetabletbg});
   }
 
@@ -37,40 +39,14 @@ const Container = styled.div`
   }
 `
 
-const Number = styled.span`
-  font-size: 1.75rem;
-  font-weight: bold;
-  opacity: 0.5;
-  letter-spacing: 0.295rem;
-  color: var(--third-color);
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
-
-const Label = styled.span`
-  text-transform: uppercase;
-  font-size: 1.75rem;
-  letter-spacing: 0.295rem;
-  color: var(--third-color);
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
-  @media (max-width: 575.97px) {
-  }
-`
-
 const Image = styled.img`
   width: 75%;
   margin-top: 5rem;
   margin-left: 1.25rem;
-  /* margin-right: 2.5rem; */
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    margin: 0;
+    width: 50%;
   }
 
   @media (max-width: 575.97px) {
@@ -83,6 +59,7 @@ const DestName = styled.h1`
  color: var(--third-color);
 
   @media (min-width: 575.98px) and (max-width: 991.98px) {
+    font-size: 5rem;
   }
 
   @media (max-width: 575.97px) {
@@ -141,15 +118,15 @@ const Destinations = () => {
           <Number>01</Number>
           <Label>Pick your destination</Label>
         </div>
-        <div className="row">
-          <div className="col-6">
+        <div className="row mt-md-5 mt-xl-0 gap-md-4 gap-xl-0">
+          <div className="col-md-12 col-xl-6 d-flex justify-content-md-center justify-content-xl-start">
             <Image src={destination.image} alt={destination.name} />
           </div>
-          <div className="col-6 d-flex align-items-end">
-            <div className='d-flex flex-column gap-5'>
+          <div className="col-md-12 col-xl-6 d-flex align-items-end">
+            <div className='d-flex flex-column text-md-center text-xl-start align-items-md-center align-items-xl-start gap-5'>
               <DestNav onDestinationSelect={handleDestinationSelect} />
               {destination && (
-                <div className='d-flex flex-column gap-5'>
+                <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-5'>
                   <div>
                     <DestName>{destination.name}</DestName>
                     <DestDesc>{destination.description}</DestDesc>

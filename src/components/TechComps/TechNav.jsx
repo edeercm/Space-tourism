@@ -39,7 +39,7 @@ const TechNav = ({ onTechnologySelect }) => {
   };
 
   return <>
-    <div className='d-flex flex-column gap-4'>
+    <div className='d-flex flex-md-row flex-xl-column gap-4'>
       <Button
         isSelected={selectedTechnology === 'Launch vehicle'}
         onClick={() => handleSelect('Launch vehicle')}

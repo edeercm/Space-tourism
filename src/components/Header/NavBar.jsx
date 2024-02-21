@@ -13,10 +13,14 @@ const InnerWrapper = styled.div`
   gap: 5rem;
   padding-right: 5.75rem;
   
-  @media (min-width: 576px) and (max-width: 992px) {}
+  @media (min-width: 576px) and (max-width: 992px) {
+    width: 30rem;
+    gap: 1.75rem;
+    padding-right: 1.5rem;
+  }
 
   @media (max-width: 575px) {
-
+    display: none;
   }
 `;
 
