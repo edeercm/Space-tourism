@@ -25,6 +25,8 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
+    height: auto;
+    padding: 0;
     background-image: url(${homemobilebg});
   }
 `
@@ -36,6 +38,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
   }
 `
 
@@ -63,6 +66,7 @@ const DestName = styled.h1`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 3.5rem;
   }
 `
 
@@ -74,6 +78,7 @@ const DestDesc = styled.p`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
 
@@ -118,15 +123,15 @@ const Destinations = () => {
           <Number>01</Number>
           <Label>Pick your destination</Label>
         </div>
-        <div className="row mt-md-5 mt-xl-0 gap-md-4 gap-xl-0">
-          <div className="col-md-12 col-xl-6 d-flex justify-content-md-center justify-content-xl-start">
+        <div className="row mt-md-5 mt-xl-0 gap-4 gap-xl-0">
+          <div className="col-12 col-xl-6 d-flex justify-content-center justify-content-xl-start">
             <Image src={destination.image} alt={destination.name} />
           </div>
-          <div className="col-md-12 col-xl-6 d-flex align-items-end">
-            <div className='d-flex flex-column text-md-center text-xl-start align-items-md-center align-items-xl-start gap-5'>
+          <div className="col-12 col-xl-6 d-flex align-items-end">
+            <div className='d-flex flex-column text-center text-xl-start align-items-center align-items-xl-start gap-5'>
               <DestNav onDestinationSelect={handleDestinationSelect} />
               {destination && (
-                <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-5'>
+                <div className='d-flex flex-column align-items-center align-items-xl-start gap-5'>
                   <div>
                     <DestName>{destination.name}</DestName>
                     <DestDesc>{destination.description}</DestDesc>

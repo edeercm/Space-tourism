@@ -12,6 +12,7 @@ export const Number = styled.span`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
 
@@ -26,5 +27,6 @@ export const Label = styled.span`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
