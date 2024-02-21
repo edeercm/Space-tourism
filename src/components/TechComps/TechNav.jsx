@@ -13,6 +13,8 @@ const Button = styled.button`
   }
 
   @media (max-width: 575.97px) {
+    width: 3rem;
+    height: 3rem;
   }
 `
 
@@ -22,10 +24,8 @@ const BtnLabel = styled.h1`
   font-weight: bold;
   color: ${(props) => (props.isSelected ? 'var(--first-color)' : 'var(--third-color)')};
   
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-  }
-
   @media (max-width: 575.97px) {
+    font-size: 1.25rem;
   }
 `
 

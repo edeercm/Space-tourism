@@ -26,6 +26,9 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
+    height: auto;
+    align-items: center;
+    padding: 10rem 0 4rem;
     background-image: url(${homemobilebg});
   }
 `
@@ -35,12 +38,12 @@ const ContentOne = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   width: 75%;
-  /* padding-bottom: 12.5rem; */
   
   @media (min-width: 575.98px) and (max-width: 991.98px) {
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
   }
 `
 
@@ -57,6 +60,9 @@ const LabelCont = styled.div`
   }
 
   @media (max-width: 575.97px) {
+    position: absolute;
+    top: 15%;
+    left: 20%;
   }
 `
 
@@ -72,6 +78,7 @@ const TechRole = styled.span`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
 
@@ -85,12 +92,17 @@ const TechName = styled.h1`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 2rem;
   }
 `
 
 const TechDesc = styled.p`
   font-size: 1.25rem;
   color: var(--second-color);
+
+  @media (max-width: 575.97px) {
+    font-size: 1.075rem;
+  }
 `
 
 const Img = styled.img`
@@ -116,17 +128,17 @@ const Technology = () => {
   return <>
     <Section>
       <div className='container-fluid'>
-        <div className="row d-flex flex-md-column-reverse flex-xl-row gap-md-5 gap-xl-0">
-          <div className="col-md-12 col-xl-7 d-flex justify-content-center align-items-center">
+        <div className="row d-flex flex-column-reverse flex-xl-row gap-5 gap-xl-0">
+          <div className="col-12 col-xl-7 d-flex justify-content-center align-items-center">
             <ContentOne>
               <LabelCont>
                 <Number>03</Number>
                 <Label>Space launch 101</Label>
               </LabelCont>
-              <div className='d-flex flex-md-column flex-xl-row text-md-center text-xl-start align-items-md-center align-items-xl-start gap-md-4 gap-xl-5'>
+              <div className='d-flex flex-column flex-xl-row text-center text-xl-start align-items-center align-items-xl-start gap-4 gap-xl-5'>
                 <TechNav onTechnologySelect={handleTechnologySelect} />
                 {technology && (
-                  <div className='d-flex flex-column gap-md-2 gap-xl-3'>
+                  <div className='d-flex flex-column gap-2 gap-xl-3'>
                     <div>
                       <TechRole>The terminology...</TechRole>
                       <TechName>{technology.name}</TechName>
@@ -137,7 +149,7 @@ const Technology = () => {
               </div>
             </ContentOne>
           </div>
-          <div className="col-md-12 col-xl-5 d-flex justify-content-md-center justify-content-xl-end px-0">
+          <div className="col-12 col-xl-5 d-flex justify-content-center justify-content-xl-end px-0">
             <Img
               src={window.innerWidth <= 991.98 ? technology.image.mobile : technology.image.desktop}
               alt={technology.name}
