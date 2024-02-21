@@ -22,6 +22,9 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
+    height: auto;
+    padding: 10rem 0 3.5rem;
+    align-items: center;
     background-image: url(${homemobilebg});
   }
 `
@@ -33,6 +36,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
   }
 `
 
@@ -50,6 +54,9 @@ const LabelCont = styled.div`
   }
 
   @media (max-width: 575.97px) {
+    position: absolute;
+    top: 12.5%;
+    padding: 1.5rem 0;
   }
 `
 
@@ -64,6 +71,7 @@ const CrewRole = styled.h4`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1rem;
   }
 `
 
@@ -77,6 +85,7 @@ const CrewName = styled.h1`
   }
 
   @media (max-width: 575.97px) {
+    font-size: 1.5rem;
   }
 `
 
@@ -90,6 +99,8 @@ const CrewDesc = styled.p`
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
+    font-size: 1rem;
   }
 `
 
@@ -102,6 +113,7 @@ const Image = styled.img`
   }
 
   @media (max-width: 575.97px) {
+    height: 35svh;
   }
 `
 
@@ -117,15 +129,15 @@ const Crew = () => {
   return <>
     <Section>
       <Container className="container">
-        <div className="row d-flex align-items-end gap-md-5 gap-xl-0">
-          <div className="col-md-12 col-xl-6 d-flex flex-column text-md-center text-xl-start align-items-md-center align-items-xl-start">
+        <div className="row d-flex flex-column-reverse flex-md-column flex-xl-row align-items-end gap-md-5 gap-xl-0">
+          <div className="col-md-12 col-xl-6 d-flex flex-column text-center text-xl-start align-items-center align-items-xl-start">
             <LabelCont>
               <Number>02</Number>
               <Label>Meet your crew</Label>
             </LabelCont>
-            <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-md-3 gap-xl-5 mb-xl-4 pb-xl-5'>
+            <div className='d-flex flex-column-reverse flex-md-column align-items-center align-items-xl-start gap-4 gap-md-3 gap-xl-5 mb-xl-4 pb-xl-5'>
               {crew && (
-                <div className='d-flex flex-column align-items-md-center align-items-xl-start gap-3'>
+                <div className='d-flex flex-column align-items-center align-items-xl-start gap-1 gap-md-3'>
                   <div>
                     <CrewRole>{crew.role}</CrewRole>
                     <CrewName>{crew.name}</CrewName>
@@ -136,7 +148,7 @@ const Crew = () => {
               <CrewNav onCrewSelect={handleCrewSelect} />
             </div>
           </div>
-          <div className="col-md-12 col-xl-6 d-flex justify-content-md-center justify-content-xl-end">
+          <div className="col-md-12 col-xl-6 d-flex justify-content-center justify-content-xl-end mb-5 mb-md-0">
             <Image src={crew.image} alt={crew.name} />
           </div>
         </div>
