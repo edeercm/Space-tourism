@@ -23,7 +23,7 @@ const Section = styled.section`
 
   @media (max-width: 575.97px) {
     height: auto;
-    padding: 10rem 0 4rem;
+    padding: 9.5rem 0 4rem;
     align-items: center;
     background-image: url(${homemobilebg});
   }
@@ -55,7 +55,7 @@ const LabelCont = styled.div`
 
   @media (max-width: 575.97px) {
     position: absolute;
-    top: 12.5%;
+    top: 11.25%;
     padding: 1.5rem 0;
   }
 `
