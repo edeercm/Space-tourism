@@ -100,20 +100,8 @@ const TechDesc = styled.p`
   color: var(--second-color);
 
   @media (max-width: 575.97px) {
-    width: 75%;
+    width: 77.5%;
     font-size: 1.075rem;
-  }
-`
-
-const Img = styled.img`
-  width: auto;
-
-  @media (min-width: 575.98px) and (max-width: 991.98px) {
-    width: 100%;
-  }
-
-  @media (max-width: 575.97px) {
-    /* width: 100%; */
   }
 `
 
@@ -151,9 +139,10 @@ const Technology = () => {
             </ContentOne>
           </div>
           <div className="col-12 col-xl-5 d-flex justify-content-center justify-content-xl-end px-0">
-            <Img
+            <img
               src={window.innerWidth <= 991.98 ? technology.image.mobile : technology.image.desktop}
               alt={technology.name}
+              className='w-auto'
             />
           </div>
         </div>
