@@ -112,6 +112,7 @@ const Img = styled.img`
   }
 
   @media (max-width: 575.97px) {
+    width: 100%;
   }
 `
 
