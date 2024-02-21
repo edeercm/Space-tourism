@@ -22,8 +22,8 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
-    height: auto;
-    padding: 10rem 0 3.5rem;
+    /* height: 100svh; */
+    padding: 10rem 0 1rem;
     align-items: center;
     background-image: url(${homemobilebg});
   }
