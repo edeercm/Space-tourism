@@ -26,7 +26,7 @@ const Section = styled.section`
 
   @media (max-width: 575.97px) {
     height: auto;
-    padding: 0;
+    padding: 7.5rem 0 3.5rem;
     background-image: url(${homemobilebg});
   }
 `
@@ -53,6 +53,7 @@ const Image = styled.img`
   }
 
   @media (max-width: 575.97px) {
+    margin-top: 2.5rem;
   }
 `
 
@@ -119,7 +120,7 @@ const Destinations = () => {
   return <>
     <Section>
       <Container className="container">
-        <div className="d-flex flex-row gap-4">
+        <div className="d-flex flex-row justify-content-center justify-content-md-start gap-4">
           <Number>01</Number>
           <Label>Pick your destination</Label>
         </div>
@@ -136,7 +137,7 @@ const Destinations = () => {
                     <DestName>{destination.name}</DestName>
                     <DestDesc>{destination.description}</DestDesc>
                   </div>
-                  <div className='d-flex flex-row gap-5'>
+                  <div className='d-flex flex-column flex-md-row gap-3 gap-md-5'>
                     <div className='d-flex flex-column gap-2'>
                       <DistLabel>Avg. distance</DistLabel>
                       <DistNum>{destination.distance}</DistNum>
