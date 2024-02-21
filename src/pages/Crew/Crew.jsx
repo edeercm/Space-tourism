@@ -22,8 +22,8 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
-    /* height: 100svh; */
-    padding: 10rem 0 1rem;
+    height: auto;
+    padding: 10rem 0 2.5rem;
     align-items: center;
     background-image: url(${homemobilebg});
   }
@@ -113,7 +113,7 @@ const Image = styled.img`
   }
 
   @media (max-width: 575.97px) {
-    height: 35svh;
+    height: 40svh;
   }
 `
 
