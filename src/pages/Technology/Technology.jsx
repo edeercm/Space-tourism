@@ -26,9 +26,9 @@ const Section = styled.section`
   }
 
   @media (max-width: 575.97px) {
-    height: auto;
+    /* height: auto; */
     align-items: center;
-    padding: 10rem 0 4rem;
+    padding: 9rem 0 0;
     background-image: url(${homemobilebg});
   }
 `
