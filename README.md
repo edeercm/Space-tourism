@@ -1,1 +1,1 @@
-# Space tourism multi-page website - Frontend Mentor Challenge
+# Frontend Mentor Challenge - Space tourism multi-page website
